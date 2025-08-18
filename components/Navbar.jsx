@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useCart } from "./CartContext";
-import { useAuth } from "./AuthContext";
 import { useState } from "react";
+import { useAuth } from "./AuthContext";
+import { useCart } from "./CartContext";
 import { useTheme } from "./ThemeContext";
 
 export default function Navbar() {
@@ -15,7 +15,7 @@ export default function Navbar() {
     <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur">
       <div className="container flex items-center justify-between py-4">
         <Link href="/" className="text-xl font-semibold">
-          My E-commerce
+          Vendo Vendo
         </Link>
         <button
           className="md:hidden"

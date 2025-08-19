@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
     <div className="card p-4 flex flex-col">
       <Link href={`/product/${product.id}`} className="block">
         <img
-          src={product.image}
+          src={product.images[0]}
           alt={product.name}
           className="w-full h-48 object-cover rounded-xl"
         />
@@ -17,12 +17,12 @@ export default function ProductCard({ product }) {
       <p className="text-slate-300 text-sm flex-1">{product.description}</p>
       <div className="mt-3 flex items-center justify-between">
         <span className="text-xl font-bold">${product.price.toFixed(2)}</span>
-        <button
+{/*         <button
           className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
           onClick={() => addToCart(product, 1)}
         >
           
-        </button>
+        </button> */}
         Consulte al privado.
       </div>
     </div>

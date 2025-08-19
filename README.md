@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 # ecommerce-next
-=======
-# My E‑commerce (Next.js 14 + App Router + Tailwind, JS)
 
 Proyecto de ejemplo de e-commerce con carrito simple.
 
@@ -26,4 +23,3 @@ Visita http://localhost:3000
 ## Notas
 - Persistencia del carrito en `localStorage`.
 - Tailwind ya configurado (globals.css importado en `app/layout.js`).
->>>>>>> master

@@ -1,14 +1,14 @@
 export const metadata = {
-  title: "My E-commerce",
-  description: "E-commerce starter with Next.js 14 (App Router) + Tailwind + Auth",
+  title: "Vendo Vendo",
+  description: "Plataforma de compra y venta de productos.",
 };
 
+import { AuthProvider } from "@/components/AuthContext";
+import { CartProvider } from "@/components/CartContext";
+import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeContext";
 import "./(styles)/globals.css";
 import "./init-users";
-import Navbar from "@/components/Navbar";
-import { CartProvider } from "@/components/CartContext";
-import { AuthProvider } from "@/components/AuthContext";
-import { ThemeProvider } from "@/components/ThemeContext";
 
 export default function RootLayout({ children }) {
   return (

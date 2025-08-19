@@ -1,8 +1,8 @@
 "use client";
-import { useMemo } from "react";
-import { products } from "@/data/products";
 import { useCart } from "@/components/CartContext";
+import { products } from "@/data/products";
 import Link from "next/link";
+import { useMemo } from "react";
 
 export default function ProductDetail({ params }) {
   const product = useMemo(
@@ -35,15 +35,20 @@ export default function ProductDetail({ params }) {
         <p className="text-slate-300 mt-2">{product.description}</p>
         <div className="mt-4 text-3xl font-bold">${product.price.toFixed(2)}</div>
         <div className="mt-6 flex gap-3">
-          <button
-            className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
-            onClick={() => addToCart(product, 1)}
-          >
-            Añadir al carrito
-          </button>
-          <Link href="/cart" className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800">
-            Ver carrito
-          </Link>
+          {false && (
+            <>
+              <button
+                className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
+                onClick={() => addToCart(product, 1)}
+              >
+                Añadir al carrito
+              </button>
+              <Link href="/cart" className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800">
+                Ver carrito
+              </Link>
+            </>
+          )}
+          Consulte al privado.
         </div>
       </div>
     </div>

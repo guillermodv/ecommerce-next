@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAuth } from "./AuthContext";
 import { useCart } from "./CartContext";
 import { useTheme } from "./ThemeContext";
+import { NAVBAR, METADATA } from "@/app/constants/literals";
 
 export default function Navbar() {
   const { totals } = useCart();
@@ -15,7 +16,7 @@ export default function Navbar() {
     <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur">
       <div className="container flex items-center justify-between py-4">
         <Link href="/" className="text-xl font-semibold">
-          Vendo Vendo
+          {METADATA.TITLE}
         </Link>
         <button
           className="md:hidden"
@@ -42,32 +43,32 @@ export default function Navbar() {
           } md:flex flex-col md:flex-row gap-6 items-center absolute md:static top-16 left-0 right-0 bg-slate-900 md:bg-transparent p-4 md:p-0`}
         >
           <Link href="/" className="hover:underline">
-            Productos
+            {NAVBAR.PRODUCTS}
           </Link>
           <Link href="/cart" className="relative hover:underline">
-            Carrito
-            <span className="ml-2 rounded-full px-2 py-0.5 text-sm bg-slate-800 border border-slate-700 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300">
+            {NAVBAR.CART}
+            <span className="ml-2 rounded-full px-2 py-0.5 text-sm bg-slate-800 border border-slate-700 dark:border-slate-300">
               {totals.count}
             </span>
           </Link>
           {user ? (
             <>
-              <span className="text-slate-400">Hola, {user.name}</span>
+              <span className="text-slate-400">{NAVBAR.GREETING}{user.name}</span>
               <button onClick={logout} className="underline">
-                Salir
+                {NAVBAR.LOGOUT}
               </button>
             </>
           ) : (
             <>
               <Link href="/auth/login" className="hover:underline">
-                Ingresar
+                {NAVBAR.LOGIN}
               </Link>
               <Link href="/auth/register" className="hover:underline">
-                Registro
+                {NAVBAR.REGISTER}
               </Link>
             </>
           )}
-          <button onClick={toggleTheme} className="p-2 rounded-full bg-slate-800 border border-slate-700 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300 dark:border-slate-300">
+          <button onClick={toggleTheme} className="p-2 rounded-full bg-slate-800 border border-slate-700 dark:border-slate-300">
             {theme === "dark" ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0M16 8A8 8 0 104 8a8 8 0 0012 0z" />

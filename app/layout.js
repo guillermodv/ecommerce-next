@@ -1,6 +1,8 @@
+import { LANG, METADATA } from "./constants/literals";
+
 export const metadata = {
-  title: "Vendo Vendo",
-  description: "Plataforma de compra y venta de productos.",
+  title: METADATA.TITLE,
+  description: METADATA.DESCRIPTION,
 };
 
 import { AuthProvider } from "@/components/AuthContext";
@@ -12,7 +14,7 @@ import "./init-users";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className="dark">
+    <html lang={LANG} className="dark">
       <body>
         <ThemeProvider>
           <AuthProvider>

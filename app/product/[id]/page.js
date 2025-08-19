@@ -3,6 +3,7 @@ import { useCart } from "@/components/CartContext";
 import { products } from "@/data/products";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { PRODUCT_DETAIL } from "@/app/constants/literals";
 
 export default function ProductDetail({ params }) {
   const product = useMemo(
@@ -16,8 +17,8 @@ export default function ProductDetail({ params }) {
   if (!product) {
     return (
       <div className="card p-6">
-        <p>Producto no encontrado.</p>
-        <Link className="underline mt-4 inline-block" href="/">Volver</Link>
+        <p>{PRODUCT_DETAIL.NOT_FOUND}</p>
+        <Link className="underline mt-4 inline-block" href="/">{PRODUCT_DETAIL.GO_BACK}</Link>
       </div>
     );
   }
@@ -70,17 +71,17 @@ export default function ProductDetail({ params }) {
                 className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
                 onClick={() => addToCart(product, 1)}
               >
-                Añadir al carrito
+                {PRODUCT_DETAIL.ADD_TO_CART}
               </button>
               <Link
                 href="/cart"
                 className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
               >
-                Ver carrito
+                {PRODUCT_DETAIL.VIEW_CART}
               </Link>
             </>
           )}
-          Consulte al privado.
+          {PRODUCT_DETAIL.CONTACT_PRIVATE}
         </div>
       </div>
     </div>

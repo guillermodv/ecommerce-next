@@ -1,0 +1,57 @@
+export const METADATA = {
+  TITLE: "Vendo Vendo",
+  DESCRIPTION: "Plataforma de compra y venta de productos.",
+};
+
+export const LANG = "es";
+
+export const PRODUCT_DETAIL = {
+  NOT_FOUND: "Producto no encontrado.",
+  GO_BACK: "Volver",
+  ADD_TO_CART: "Añadir al carrito",
+  VIEW_CART: "Ver carrito",
+  CONTACT_PRIVATE: "Consulte al privado.",
+};
+
+export const NAVBAR = {
+  PRODUCTS: "Productos",
+  CART: "Carrito",
+  GREETING: "Hola, ",
+  LOGOUT: "Salir",
+  LOGIN: "Ingresar",
+  REGISTER: "Registro",
+};
+
+export const HOME_PAGE = {
+  FEATURED_PRODUCTS: "Productos destacados",
+};
+
+export const LOGIN_PAGE = {
+  INCORRECT_CREDENTIALS: "Credenciales incorrectas",
+  LOGIN: "Ingresar",
+  EMAIL_PLACEHOLDER: "Email",
+  PASSWORD_PLACEHOLDER: "Contraseña",
+  SUBMIT_BUTTON: "Entrar",
+};
+
+export const REGISTER_PAGE = {
+  USER_EXISTS: "Ya existe un usuario con ese email",
+  REGISTER: "Registro",
+  NAME_PLACEHOLDER: "Nombre",
+  CREATE_ACCOUNT: "Crear cuenta",
+  LOGIN: "Iniciar sesión",
+};
+
+export const CART_PAGE = {
+  YOUR_CART: "Tu carrito",
+  EMPTY_CART: "El carrito está vacío.",
+  EXPLORE_PRODUCTS: "Explora productos",
+  PER_UNIT: "c/u",
+  REMOVE: "Quitar",
+  SUMMARY: "Resumen",
+  SUBTOTAL: "Subtotal",
+  SHIPPING: "Envío",
+  TOTAL: "Total",
+  CHECKOUT: "Finalizar compra",
+  CLEAR_CART: "Vaciar carrito",
+};

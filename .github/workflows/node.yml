@@ -1,0 +1,35 @@
+name: Running test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read # allows SonarCloud to decorate PRs with analysis results
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run tests
+        run: pnpm test
+
+  Analysis:
+    needs: Test
+    runs-on: ubuntu-latest
+
+    

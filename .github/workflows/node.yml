@@ -28,8 +28,4 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-  Analysis:
-    needs: Test
-    runs-on: ubuntu-latest
-
     

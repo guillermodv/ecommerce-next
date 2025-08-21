@@ -1,5 +1,5 @@
 "use client";
-import { useCart } from "@/components/CartContext";
+import { useFavorites } from "@/components/FavoritesContext";
 import { products } from "@/data/products";
 import Link from "next/link";
 import { useMemo, useState } from "react";
@@ -12,7 +12,7 @@ export default function ProductDetail({ params }) {
   );
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const { addToCart } = useCart();
+  const { addToFavorites } = useFavorites();
 
   if (!product) {
     return (
@@ -69,12 +69,12 @@ export default function ProductDetail({ params }) {
             <>
               <button
                 className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
-                onClick={() => addToCart(product, 1)}
+                onClick={() => addToFavorites(product, 1)}
               >
                 {PRODUCT_DETAIL.ADD_TO_CART}
               </button>
               <Link
-                href="/cart"
+                href="/favorites"
                 className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
               >
                 {PRODUCT_DETAIL.VIEW_CART}

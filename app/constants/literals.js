@@ -8,14 +8,14 @@ export const LANG = "es";
 export const PRODUCT_DETAIL = {
   NOT_FOUND: "Producto no encontrado.",
   GO_BACK: "Volver",
-  ADD_TO_CART: "Añadir al carrito",
-  VIEW_CART: "Ver carrito",
+  ADD_TO_CART: "Añadir a favoritos",
+  VIEW_CART: "Ver favoritos",
   CONTACT_PRIVATE: "Consulte al privado.",
 };
 
 export const NAVBAR = {
   PRODUCTS: "Productos",
-  CART: "Carrito",
+  CART: "Favoritos",
   GREETING: "Hola, ",
   LOGOUT: "Salir",
   LOGIN: "Ingresar",
@@ -42,9 +42,9 @@ export const REGISTER_PAGE = {
   LOGIN: "Iniciar sesión",
 };
 
-export const CART_PAGE = {
-  YOUR_CART: "Tu carrito",
-  EMPTY_CART: "El carrito está vacío.",
+export const FAVORITES_PAGE = {
+  YOUR_FAVORITES: "Tus favoritos",
+  EMPTY_FAVORITES: "No tienes favoritos.",
   EXPLORE_PRODUCTS: "Explora productos",
   PER_UNIT: "c/u",
   REMOVE: "Quitar",
@@ -53,5 +53,6 @@ export const CART_PAGE = {
   SHIPPING: "Envío",
   TOTAL: "Total",
   CHECKOUT: "Finalizar compra",
-  CLEAR_CART: "Vaciar carrito",
+  CLEAR_FAVORITES: "Vaciar favoritos",
+  ADD_TO_FAVORITES: "Añadir a favoritos",
 };

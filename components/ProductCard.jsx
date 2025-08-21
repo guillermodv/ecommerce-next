@@ -1,10 +1,10 @@
 "use client";
-import { PRODUCT_DETAIL } from "@/app/constants/literals";
+import { FAVORITES_PAGE } from "@/app/constants/literals";
 import Link from "next/link";
-import { useCart } from "./CartContext";
+import { useFavorites } from "./FavoritesContext";
 
 export default function ProductCard({ product }) {
-  const { addToCart } = useCart();
+  const { addToFavorites } = useFavorites();
   return (
     <div className="card p-4 flex flex-col">
       <Link href={`/product/${product.id}`} className="block">
@@ -15,16 +15,16 @@ export default function ProductCard({ product }) {
         />
         <h3 className="mt-3 text-lg font-semibold">{product.name}</h3>
       </Link>
-      <p className="text-slate-300 text-sm flex-1">{product.description}</p>
+      <p className="text-grey-500 text-sm flex-1">{product.description}</p>
+      CONSULTE AL PRIVADO
       <div className="mt-3 flex items-center justify-between">
         <span className="text-xl font-bold">${product.price.toFixed(2)}</span>
-        {/* <button
+        <button
           className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
-          onClick={() => addToCart(product, 1)}
+          onClick={() => addToFavorites(product, 1)}
         >
-          
-        </button> */}
-        {PRODUCT_DETAIL.CONTACT_PRIVATE}
+          {FAVORITES_PAGE.ADD_TO_FAVORITES}
+        </button>
       </div>
     </div>
   );

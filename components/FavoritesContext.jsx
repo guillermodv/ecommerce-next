@@ -1,15 +1,15 @@
 "use client";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
-const CartContext = createContext();
+const FavoritesContext = createContext();
 
-export function CartProvider({ children }) {
+export function FavoritesProvider({ children }) {
   const [items, setItems] = useState([]);
 
   // hydrate from localStorage
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("cart:v1");
+      const saved = localStorage.getItem("favorites:v1");
       if (saved) setItems(JSON.parse(saved));
     } catch {}
   }, []);
@@ -17,11 +17,11 @@ export function CartProvider({ children }) {
   // persist
   useEffect(() => {
     try {
-      localStorage.setItem("cart:v1", JSON.stringify(items));
+      localStorage.setItem("favorites:v1", JSON.stringify(items));
     } catch {}
   }, [items]);
 
-  const addToCart = (product, qty = 1) => {
+  const addToFavorites = (product, qty = 1) => {
     setItems((prev) => {
       const idx = prev.findIndex((p) => p.id === product.id);
       if (idx > -1) {
@@ -33,7 +33,7 @@ export function CartProvider({ children }) {
     });
   };
 
-  const removeFromCart = (id) => {
+  const removeFromFavorites = (id) => {
     setItems((prev) => prev.filter((p) => p.id !== id));
   };
 
@@ -43,7 +43,7 @@ export function CartProvider({ children }) {
     );
   };
 
-  const clearCart = () => setItems([]);
+  const clearFavorites = () => setItems([]);
 
   const totals = useMemo(() => {
     const count = items.reduce((acc, it) => acc + it.qty, 0);
@@ -53,8 +53,8 @@ export function CartProvider({ children }) {
     return { count, subtotal, shipping, total };
   }, [items]);
 
-  const value = { items, addToCart, removeFromCart, changeQty, clearCart, totals };
-  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+  const value = { items, addToFavorites, removeFromFavorites, changeQty, clearFavorites, totals };
+  return <FavoritesContext.Provider value={value}>{children}</FavoritesContext.Provider>;
 }
 
-export const useCart = () => useContext(CartContext);
+export const useFavorites = () => useContext(FavoritesContext);

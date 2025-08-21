@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 import { AuthProvider } from "@/components/AuthContext";
-import { CartProvider } from "@/components/CartContext";
+import { FavoritesProvider } from "@/components/FavoritesContext";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeContext";
 import "./(styles)/globals.css";
@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
       <body>
         <ThemeProvider>
           <AuthProvider>
-            <CartProvider>
+            <FavoritesProvider>
               <Navbar />
               <main className="container py-8">{children}</main>
-            </CartProvider>
+            </FavoritesProvider>
           </AuthProvider>
         </ThemeProvider>
       </body>

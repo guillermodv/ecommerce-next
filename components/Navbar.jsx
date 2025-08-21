@@ -2,12 +2,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useAuth } from "./AuthContext";
-import { useCart } from "./CartContext";
+import { useFavorites } from "./FavoritesContext";
 import { useTheme } from "./ThemeContext";
 import { NAVBAR, METADATA } from "@/app/constants/literals";
 
 export default function Navbar() {
-  const { totals } = useCart();
+  const { totals } = useFavorites();
   const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link href="/" className="hover:underline">
             {NAVBAR.PRODUCTS}
           </Link>
-          <Link href="/cart" className="relative hover:underline">
+          <Link href="/favorites" className="relative hover:underline">
             {NAVBAR.CART}
             <span className="ml-2 rounded-full px-2 py-0.5 text-sm bg-slate-800 border border-slate-700 dark:border-slate-300">
               {totals.count}

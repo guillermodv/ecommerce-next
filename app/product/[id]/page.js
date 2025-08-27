@@ -25,7 +25,7 @@ export default function ProductDetail({ params }) {
 
   return (
     <div className="grid gap-8 md:grid-cols-2">
-      <div className="card p-4 relative aspect-w-4 aspect-h-3">
+      <div className="card p-4 relative h-96">
         <img
           src={product.images[currentImageIndex]}
           alt={product.name}

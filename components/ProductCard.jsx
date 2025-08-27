@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="card p-4 flex flex-col">
       <Link href={`/product/${product.id}`} className="block">
-        <div className="aspect-w-1 aspect-h-1">
+        <div className="h-48">
           <img
             src={product.images[0]}
             alt={product.name}

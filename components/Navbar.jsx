@@ -13,9 +13,9 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur">
+    <header className="border-b dark:border-slate-200 border-slate-800 dark:bg-white bg-slate-900">
       <div className="container flex items-center justify-between py-4">
-        <Link href="/" className="text-xl font-semibold">
+        <Link href="/" className="text-xl font-semibold dark:text-slate-900 text-white">
           {METADATA.TITLE}
         </Link>
         <button
@@ -24,7 +24,7 @@ export default function Navbar() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-6 w-6 dark:text-slate-900 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -40,14 +40,14 @@ export default function Navbar() {
         <nav
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } md:flex flex-col md:flex-row gap-6 items-center absolute md:static top-16 left-0 right-0 bg-white dark:bg-slate-900 md:bg-transparent p-4 md:p-0 z-50 text-slate-900 dark:text-white`}
+          } md:flex flex-col md:flex-row gap-6 items-center absolute md:static top-16 left-0 right-0 dark:bg-white bg-slate-900 md:bg-transparent p-4 md:p-0 z-50 dark:text-slate-900 text-white`}
         >
           <Link href="/" className="hover:underline" onClick={() => setIsMenuOpen(false)}>
             {NAVBAR.PRODUCTS}
           </Link>
           <Link href="/favorites" className="relative hover:underline" onClick={() => setIsMenuOpen(false)}>
             {NAVBAR.CART}
-            <span className="ml-2 rounded-full px-2 py-0.5 text-sm bg-slate-800 border border-slate-700 dark:border-slate-300">
+            <span className="ml-2 rounded-full px-2 py-0.5 text-sm dark:bg-slate-200 bg-slate-800 dark:text-slate-900 text-white border dark:border-slate-300 border-slate-700">
               {totals.count}
             </span>
           </Link>

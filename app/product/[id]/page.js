@@ -25,11 +25,11 @@ export default function ProductDetail({ params }) {
 
   return (
     <div className="grid gap-8 md:grid-cols-2">
-      <div className="card p-4 relative">
+      <div className="card p-4 relative aspect-w-4 aspect-h-3">
         <img
           src={product.images[currentImageIndex]}
           alt={product.name}
-          className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-xl"
+          className="w-full h-full object-cover rounded-xl"
         />
         {product.images.length > 1 && (
           <>

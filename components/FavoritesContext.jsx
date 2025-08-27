@@ -25,9 +25,7 @@ export function FavoritesProvider({ children }) {
     setItems((prev) => {
       const idx = prev.findIndex((p) => p.id === product.id);
       if (idx > -1) {
-        const copy = [...prev];
-        copy[idx] = { ...copy[idx], qty: copy[idx].qty + qty };
-        return copy;
+        return prev; // do nothing if product is already in favorites
       }
       return [...prev, { ...product, qty }];
     });

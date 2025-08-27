@@ -8,11 +8,13 @@ export default function ProductCard({ product }) {
   return (
     <div className="card p-4 flex flex-col">
       <Link href={`/product/${product.id}`} className="block">
-        <img
-          src={product.images[0]}
-          alt={product.name}
-          className="w-full h-48 object-cover rounded-xl"
-        />
+        <div className="aspect-w-1 aspect-h-1">
+          <img
+            src={product.images[0]}
+            alt={product.name}
+            className="w-full h-full object-cover rounded-xl"
+          />
+        </div>
         <h3 className="mt-3 text-lg font-semibold">{product.name}</h3>
       </Link>
       <p className="text-grey-500 text-sm flex-1">{product.description}</p>

@@ -11,6 +11,6 @@ export const products = [
     name: "Iphone 12 pro",
     price: 400,
     images: ["/iphone12.png"],
-    description: "82% bateria perfecto estado."
+    description: "Precio en USD, 82% bateria perfecto estado."
   },
 ];

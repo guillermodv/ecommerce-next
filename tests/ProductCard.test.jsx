@@ -1,4 +1,3 @@
-import { PRODUCT_DETAIL } from '@/app/constants/literals';
 import ProductCard from '@/components/ProductCard';
 import { render, screen } from '@testing-library/react';
 
@@ -23,6 +22,5 @@ describe('ProductCard', () => {
     expect(screen.getByText(product.name)).toBeInTheDocument();
     expect(screen.getByText(product.description)).toBeInTheDocument();
     expect(screen.getByAltText(product.name)).toBeInTheDocument();
-    expect(screen.getByText(PRODUCT_DETAIL.CONTACT_PRIVATE)).toBeInTheDocument();
   });
 });

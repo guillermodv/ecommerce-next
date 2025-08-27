@@ -11,6 +11,7 @@ export const PRODUCT_DETAIL = {
   ADD_TO_CART: "Añadir a favoritos",
   VIEW_CART: "Ver favoritos",
   CONTACT_PRIVATE: "Consulte al privado.",
+  WHATSAPP_MESSAGE: "Hola, me interesa el producto",
 };
 
 export const NAVBAR = {

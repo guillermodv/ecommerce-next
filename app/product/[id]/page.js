@@ -65,22 +65,22 @@ export default function ProductDetail({ params }) {
           ${product.price.toFixed(2)}
         </div>
         <div className="mt-6 flex gap-3">
-          {false && (
-            <>
-              <button
-                className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
-                onClick={() => addToFavorites(product, 1)}
-              >
-                {PRODUCT_DETAIL.ADD_TO_CART}
-              </button>
-              <Link
-                href="/favorites"
-                className="px-4 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
-              >
-                {PRODUCT_DETAIL.VIEW_CART}
-              </Link>
-            </>
-          )}
+          <button
+            className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-red-500"
+            onClick={() => addToFavorites(product)}
+          >
+            Añadir a favoritos
+          </button>
+          <a
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_PHONE_NUMBER}?text=${PRODUCT_DETAIL.WHATSAPP_MESSAGE}:%20${product.name}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-green-500"
+          >
+            <img src="/whatsapp.svg" alt="WhatsApp" className="w-6 h-6" />
+          </a>
+        </div>
+        <div className="mt-6 flex gap-3">
           {PRODUCT_DETAIL.CONTACT_PRIVATE}
         </div>
       </div>

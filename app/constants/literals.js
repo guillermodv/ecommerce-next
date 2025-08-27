@@ -33,6 +33,7 @@ export const LOGIN_PAGE = {
   EMAIL_PLACEHOLDER: "Email",
   PASSWORD_PLACEHOLDER: "Contraseña",
   SUBMIT_BUTTON: "Entrar",
+  REGISTER_LINK: "¿No tienes una cuenta? Regístrate",
 };
 
 export const REGISTER_PAGE = {

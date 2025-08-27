@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
-import { useAuth } from "@/components/AuthContext";
-import { useRouter } from "next/navigation";
 import { LOGIN_PAGE } from "@/app/constants/literals";
+import { useAuth } from "@/components/AuthContext";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -39,11 +40,12 @@ export default function LoginPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="w-full p-2 rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">
+        <button className="w-full p-2 rounded bg-slate-800 dark:bg-slate-200 border border-slate-700 dark:border-slate-300 hover:bg-slate-700 dark:hover:bg-slate-300 text-white dark:text-black">
           {LOGIN_PAGE.SUBMIT_BUTTON}
         </button>
-        <button className="w-full p-2 rounded bg-slate-800 dark:bg-slate-200 border border-slate-700 dark:border-slate-300 hover:bg-slate-700 dark:hover:bg-slate-300 text-white dark:text-black">
-        </button>
+        <Link href="/auth/register" className="block w-full p-2 text-center rounded bg-slate-800 dark:bg-slate-200 border border-slate-700 dark:border-slate-300 hover:bg-slate-700 dark:hover:bg-slate-300 text-white dark:text-black">
+          {LOGIN_PAGE.REGISTER_LINK}
+        </Link>
       </form>
     </div>
   );

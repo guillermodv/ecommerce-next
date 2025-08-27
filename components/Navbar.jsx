@@ -40,7 +40,7 @@ export default function Navbar() {
         <nav
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } md:flex flex-col md:flex-row gap-6 items-center absolute md:static top-16 left-0 right-0 bg-slate-900 md:bg-transparent p-4 md:p-0`}
+          } md:flex flex-col md:flex-row gap-6 items-center absolute md:static top-16 left-0 right-0 bg-white dark:bg-slate-900 md:bg-transparent p-4 md:p-0 z-50 text-slate-900 dark:text-white`}
         >
           <Link href="/" className="hover:underline">
             {NAVBAR.PRODUCTS}

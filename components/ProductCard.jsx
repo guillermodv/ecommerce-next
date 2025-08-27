@@ -20,7 +20,7 @@ export default function ProductCard({ product }) {
       <div className="mt-3 flex items-center justify-between">
         <span className="text-xl font-bold">${product.price.toFixed(2)}</span>
         <button
-          className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800"
+          className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-red-500"
           onClick={() => addToFavorites(product, 1)}
         >
           {FAVORITES_PAGE.ADD_TO_FAVORITES}

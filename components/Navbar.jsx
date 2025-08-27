@@ -42,10 +42,10 @@ export default function Navbar() {
             isMenuOpen ? "flex" : "hidden"
           } md:flex flex-col md:flex-row gap-6 items-center absolute md:static top-16 left-0 right-0 bg-white dark:bg-slate-900 md:bg-transparent p-4 md:p-0 z-50 text-slate-900 dark:text-white`}
         >
-          <Link href="/" className="hover:underline">
+          <Link href="/" className="hover:underline" onClick={() => setIsMenuOpen(false)}>
             {NAVBAR.PRODUCTS}
           </Link>
-          <Link href="/favorites" className="relative hover:underline">
+          <Link href="/favorites" className="relative hover:underline" onClick={() => setIsMenuOpen(false)}>
             {NAVBAR.CART}
             <span className="ml-2 rounded-full px-2 py-0.5 text-sm bg-slate-800 border border-slate-700 dark:border-slate-300">
               {totals.count}
@@ -60,10 +60,10 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link href="/auth/login" className="hover:underline">
+              <Link href="/auth/login" className="hover:underline" onClick={() => setIsMenuOpen(false)}>
                 {NAVBAR.LOGIN}
               </Link>
-              <Link href="/auth/register" className="hover:underline">
+              <Link href="/auth/register" className="hover:underline" onClick={() => setIsMenuOpen(false)}>
                 {NAVBAR.REGISTER}
               </Link>
             </>

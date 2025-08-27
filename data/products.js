@@ -5,5 +5,12 @@ export const products = [
     price: 1600000,
     images: ["/corven.jpg", "/corven.jpg", "/corven.jpg"],
     description: "4000km, bateria nueva, se usa todos los dias."
-  }
+  },
+  {
+    id: "2",
+    name: "Iphone 12 pro",
+    price: 400,
+    images: ["/iphone12.png"],
+    description: "82% bateria perfecto estado."
+  },
 ];

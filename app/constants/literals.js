@@ -55,7 +55,7 @@ export const FAVORITES_PAGE = {
   TOTAL: "Total",
   CHECKOUT: "Finalizar compra",
   CLEAR_FAVORITES: "Vaciar favoritos",
-  ADD_TO_FAVORITES: "Añadir a favoritos",
+  ADD_TO_FAVORITES: "A favoritos",
 };
 
 export const MESSAGE_DELIVERY = "https://api.whatsapp.com/send?phone=5491165550438&text=estoy%20interesado%20en%20el%20producto";

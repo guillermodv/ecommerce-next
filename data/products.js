@@ -16,10 +16,10 @@ export const products = [
     status: "available"
   },
   {
-    id: "2",
-    name: "Iphone 12 pro",
-    price: 400,
-    images: ["/iphone12.png"],
+    id: "3",
+    name: "Iphone 13",
+    price: 500,
+    images: ["/iphone13.png"],
     description: "Precio en USD, 82% bateria perfecto estado.",
     status: "sold"
   },

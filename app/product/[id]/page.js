@@ -26,6 +26,11 @@ export default function ProductDetail({ params }) {
   return (
     <div className="grid gap-8 md:grid-cols-2">
       <div className="card p-4 relative h-96">
+        {product.status !== 'available' && (
+          <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+            <span className="text-white text-2xl font-bold">Vendido</span>
+          </div>
+        )}
         <img
           src={product.images[currentImageIndex]}
           alt={product.name}
@@ -64,25 +69,24 @@ export default function ProductDetail({ params }) {
         <div className="mt-4 text-3xl font-bold">
           ${product.price.toFixed(2)}
         </div>
-        <div className="mt-6 flex gap-3">
-          <button
-            className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-red-500"
-            onClick={() => addToFavorites(product)}
-          >
-            Añadir a favoritos
-          </button>
-          <a
-            href={`${MESSAGE_DELIVERY}:%20${product.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-green-500"
-          >
-            <img src="/whatsapp.svg" alt="WhatsApp" className="w-6 h-6" />
-          </a>
-        </div>
-        <div className="mt-6 flex gap-3">
-          {PRODUCT_DETAIL.CONTACT_PRIVATE}
-        </div>
+        {product.status === 'available' && (
+          <div className="mt-6 flex gap-3">
+            <button
+              className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-red-500"
+              onClick={() => addToFavorites(product)}
+            >
+              Añadir a favoritos
+            </button>
+            <a
+              href={`${MESSAGE_DELIVERY}:%20${product.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-green-500"
+            >
+              <img src="/whatsapp.svg" alt="WhatsApp" className="w-6 h-6" />
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -49,6 +49,7 @@ export function FavoritesProvider({ children }) {
     const count = items.reduce((acc, it) => acc + it.qty, 0);
     const subtotal = items.reduce((acc, it) => acc + it.qty * it.price, 0);
     const shipping = subtotal > 0 ? 6.99 : 0;
+    shipping = 0;
     const total = subtotal + shipping;
     return { count, subtotal, shipping, total };
   }, [items]);

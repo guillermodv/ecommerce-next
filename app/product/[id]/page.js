@@ -1,9 +1,9 @@
 "use client";
+import { MESSAGE_DELIVERY, PRODUCT_DETAIL } from "@/app/constants/literals";
 import { useFavorites } from "@/components/FavoritesContext";
 import { products } from "@/data/products";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { PRODUCT_DETAIL } from "@/app/constants/literals";
 
 export default function ProductDetail({ params }) {
   const product = useMemo(
@@ -72,7 +72,7 @@ export default function ProductDetail({ params }) {
             Añadir a favoritos
           </button>
           <a
-            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_PHONE_NUMBER}?text=${PRODUCT_DETAIL.WHATSAPP_MESSAGE}:%20${product.name}`}
+            href={`${MESSAGE_DELIVERY}:%20${product.name}`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 hover:text-green-500"

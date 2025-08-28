@@ -3,11 +3,20 @@ import ProductCard from "@/components/ProductCard";
 import { HOME_PAGE } from "./constants/literals";
 
 export default function HomePage() {
+  const sortedProducts = [...products].sort((a, b) => {
+    if (a.status === "available" && b.status !== "available") {
+      return -1;
+    }
+    if (a.status !== "available" && b.status === "available") {
+      return 1;
+    }
+    return 0;
+  });
   return (
     <section>
       <h1 className="text-3xl font-semibold mb-6">{HOME_PAGE.FEATURED_PRODUCTS}</h1>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((p) => (
+        {sortedProducts.map((p) => (
           <ProductCard key={p.id} product={p} />
         ))}
       </div>
